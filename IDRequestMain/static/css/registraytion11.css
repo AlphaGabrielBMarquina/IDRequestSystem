@@ -1,0 +1,79 @@
+.navbar .navbar-brand{
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-text-stroke-width:.5px;
+  cursor: pointer;
+}
+.navbar .navbar-toggler{
+  color:blue;
+}
+.navbar-brand img{
+  width: 800;
+  height: 85px;
+  margin-top: 2px;
+  margin-right: 20px;
+  color: black;
+  font-size: 20px;
+  cursor: default;
+}
+.navbar-nav{
+  text-align: right;
+  margin-right: 20;
+
+}
+.navbar{
+  background-image: linear-gradient(to bottom, red, pink)! important;
+  z-index: 2;
+}
+.navbar .navbar-nav li a{
+  color: black
+}
+.nav-link{
+  font-size: 20px;
+  margin: 3px;
+  color: white;
+  font-weight: 500;
+  z-index: 1;
+  cursor: pointer;
+
+}
+.van:hover{
+  font-weight: 650;
+
+}
+.navbar .nav-item .dropdown-menu {
+  color : rgb(0, 0, 0)! important;
+  
+}
+.navbar .nav-item .dropdown-menu .dropdown-item:hover{
+  color : red! important;
+  background-color: rgb(255, 255, 255);
+  opacity: 1;
+  transition: .1s ease-in;
+  font-weight: 600;
+}
+.navbar-brand.custom-brand.desktopp{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  cursor: default;
+}
+@media screen and (max-width: 400px){
+.desktopp{
+display: none!important;
+}
+}
+#display_image1{
+  width: 192px;
+  height: 192px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+}
+#display_image2{
+  width: 192px;
+  height: 192px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content%}
+<html lang="en">
+  <head>
+    <link rel="icon" href="{% static 'pic/tupc logo.png'%}" type="image/gif/png">
+    <title>Approval for Student</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/registraytion11.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Approval</title>
+
+  </head>
+
+  <body>
+    <div class="menu-bar">
+      <nav class="navbar navbar-expand-lg navbar-light stic">
+          <a class="navbar-brand custom-brand desktop" href="#"><img src="{% static 'pic/tupc logo.png'%}"></a>
+          <a class="navbar-brand custom-brand desktopp" href="#" style="text-align: left;">TUP CAVITE</a>
+          
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link van" href="{%url 'approvalf'%}">For Faculty Approval</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link van" href="{%url 'userreg'%}">User Registration</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link van" data-toggle="modal" data-target="#exampleModalCenter">Logout</a>
+              </li>          
+            </ul>
+            
+          </div>
+      </nav>
+    </div>
+    <div class="container-fluid">
+      <h2>For Student Approval</h2><hr>
+    </div>
+    
+    <div class="container-fluid">
+      <div class="row p-0 p-sm-1 p-md-2 p-lg-4">
+        <div class="card col-md-12 mt-2 mb-2">
+          <div class="card-header text-center">
+              Student Personal Information
+          </div>
+          <div class="table-responsive text-center">
+            <br>
+            <div class="container table text-center" style="margin-left: auto; margin-right: auto;">
+              <table class="text-center" id="reginfo" style="margin-left: auto; margin-right: auto;" >
+                {% for spra in data %}
+                    <tr>
+                    <td>First Name:</td>
+                    <td> {{spra.firstname1}} </td>
+                    </tr>
+                    <tr>
+                        <td>Middle Name:</td>
+                        <td>{{spra.middlename}}</td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:</td>
+                        <td>{{spra.lastname}}</td>
+                    </tr>
+                    <tr>
+                        <td>Course:</td>
+                        <td>{{spra.course}}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact Person:</td>
+                        <td>{{spra.conterpersonn}}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact Number:</td>
+                        <td>{{spra.contactnum}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td>{{spra.address}}</td>
+                    </tr>
+                    <tr>
+                        <td>Student Number:</td>
+                        <td>{{spra.studnum}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email Address:</td>
+                        <td>{{spra.semail}}</td>
+                    </tr>
+                    <tr>
+                        <td>Signature:</td>
+                        <td>{{spra.signature}}</td>
+                    </tr>
+                    {% endfor %}
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                Are You Sure You Want To Logout Your Account?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href="{% url 'gotologout'%}" class="btn btn-danger" role="button">Logout</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <footer class="site-footer" style="background-color: gray;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 mt-4"></div>
+          <div class="col-sm-6 mb-4 mt-4" style="text-align: center;">
+            <img src="{% static 'pic/tupc logo.png'%}" width="100"><br>
+            <b>TECHNOLOGICAL UNIVERSITY OF THE PHILIPPINES <br>
+              CAVITE CAMPUS</b><br>
+          Carlos Q. Trinidad Avenue, Salawag, Dasmariñas City, Cavite,
+          Philippines<br>
+          Telefax: (046) 416-4920 <br>
+          Email: <a class="email" href="mailto:cavite@tup.edu.ph">cavite@tup.edu.ph</a> │ Website:
+          <a class="link" href="https://www.tup.edu.ph/" target="_blank">www.tup.edu.ph</a>
+          </div>
+          <div class="col-sm-3 mt-4"></div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="{% static 'js/Approval.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+{% endblock %}
+</html>

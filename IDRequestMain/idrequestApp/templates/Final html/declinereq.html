@@ -1,0 +1,66 @@
+{% block content%}
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="icon" href="{% static 'pic/tupc logo.png'%}" type="image/gif/png">
+  <title>Confirmation to Decline</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  
+
+  <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+
+
+  <div class="menu-bar">
+    <nav class="navbar navbar-expand-lg navbar-light stic">
+        <a class="navbar-brand" href="#"><img class="img-fluid" src="{% static 'pic/tupc logo.png'%}"></a>
+        <a class="navbar-brand custom-brand desktopp" href="#" style="text-align: left;">TUP CAVITE</a>
+        <button style="opacity: 0; cursor: default" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+      
+    </nav>
+  </div>
+
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <h3 id="form-title">Are you sure you want to Decline The Pending Request?</h3>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <h5 id="form-title">Click "Submit" to Decline</h5>
+            </div>
+
+            <div class="d-flex justify-content-center form_container">
+
+                <form action="{% url 'delete' item.id %}" method="POST" >
+
+                    {% csrf_token %}
+
+                    <a class="btn btn-warning" href="{% url 'approval' %}">Cancel</a>
+
+                    <input class="btn btn-danger" type="submit" name="Confirm">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!--<script src="{% static 'js/Login.js'%}"></script>-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
+{% endblock %}
